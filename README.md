@@ -1,6 +1,6 @@
 ## WEB server
 
-web server with CRUD operations using node.js 
+Web server with CRUD operations created using node.js 
 
-### dependencies
+### Dependencies
 * Express
