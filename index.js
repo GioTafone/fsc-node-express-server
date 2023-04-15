@@ -10,24 +10,6 @@ app.use(express.json());
 
 app.use(express.static("build"));
 
-let notes = [
-  {
-    id: 1,
-    content: "Go to grocery store",
-    important: true,
-  },
-  {
-    id: 2,
-    content: "Send a message to Ahn",
-    important: false,
-  },
-  {
-    id: 3,
-    content: "Walk the dogo",
-    important: true,
-  },
-];
-
 const generateId = () => {
   const maxId = notes.length > 0 ? Math.max(...notes.map((n) => n.id)) : 0;
   return maxId + 1;
@@ -111,7 +93,7 @@ const unknownEndpoint = (request, response) => {
 
 app.use(unknownEndpoint);
 
-const port = process.env.PORT;
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+const PORT = process.env.PORT;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
