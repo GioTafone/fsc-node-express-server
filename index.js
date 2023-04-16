@@ -1,7 +1,8 @@
+const express = require('express')
+const app = express()
+const cors = require('cors')
 require('dotenv').config()
-const express = require("express");
-const cors = require("cors");
-const app = express();
+
 const Note = require("./models/note");
 
 app.use(cors());
@@ -93,7 +94,7 @@ const unknownEndpoint = (request, response) => {
 
 app.use(unknownEndpoint);
 
-const port = process.env.PORT;
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+const PORT = process.env.PORT
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+})
